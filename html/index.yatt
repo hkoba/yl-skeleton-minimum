@@ -1,0 +1,12 @@
+<!yatt:args x y>
+<yatt:layout>
+  <h2>Hello!</h2>
+  
+  <form>
+  x=<input name="x" value="&yatt:x;"><br>
+  y=<input name="y" value="&yatt:y;"><br>
+  _z=<input name="_z" value="&yatt:param(_z);"><br>
+  <input type="submit">
+  </form>
+
+</yatt:layout>
