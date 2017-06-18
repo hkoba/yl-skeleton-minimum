@@ -5,6 +5,8 @@ use lib "$FindBin::Bin/lib", "$FindBin::Bin/local/lib/perl5";
 
 use YATT::Lite::WebMVC0::SiteApp -as_base, -Entity, qw/*CON/;
 
+use YATT::Lite::WebMVC0::Partial::Session2;
+
 {
   my $site = MY->load_factory_for_psgi($0);
 

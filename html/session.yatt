@@ -1,0 +1,29 @@
+&yatt:session_start();
+<yatt:layout>
+  
+  <form method="POST">
+    <dl>
+    <yatt:foreach my=name list="qw/foo bar baz/">
+      <dt>&yatt:name;</dt>
+      <dd>
+        <input name="&yatt:name;" value="&yatt:session():get(:name);">
+      </dd>
+    </yatt:foreach>
+    </dl>
+    <input type="submit">
+    <input type="hidden" name="!!" value="set">
+  </form>
+</yatt:layout>
+
+<!yatt:action set>
+
+$this->entity_session_start();
+
+my $session = $this->entity_session;
+
+foreach my $name (qw/foo bar baz/) {
+  $session->set($name => $CON->param($name));
+}
+
+$CON->redirect($this->entity_file_location);
+
