@@ -2,9 +2,8 @@
 use strict;
 use FindBin;
 use lib "$FindBin::Bin/lib", "$FindBin::Bin/local/lib/perl5";
-use YATT::Lite::WebMVC0::SiteApp -as_base;
 
-use YATT::Lite qw/*CON Entity/;
+use YATT::Lite::WebMVC0::SiteApp -as_base, -Entity, qw/*CON/;
 
 {
   my $site = MY->load_factory_for_psgi($0);
