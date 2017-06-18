@@ -15,6 +15,10 @@ use YATT::Lite::WebMVC0::SiteApp -as_base, -Entity, qw/*CON/;
   #   };
   # }
 
+  if ($main::{'breakpoint'} and my $sub = main->can("breakpoint")) {
+    $sub->();
+  }
+
   return $site if $site->want_object;
 
   $site->to_app;
